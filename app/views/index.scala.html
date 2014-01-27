@@ -1,0 +1,15 @@
+@(rows : List[List[Any]])
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wall of Shame</title>
+</head>
+<body>
+    <div style="width:100%;text-align:center;"><h1>Wall of Shame</h1></div>
+    <ul>
+        @rows.map { r =>
+            <li>@r(0) requested "@(r(1))" @r(2) time(s)</li>
+        }
+    </ul>
+</body>
+</html>
