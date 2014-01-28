@@ -10,11 +10,13 @@ object Application extends Controller {
 
   def index = Action {
     DB withConnection { implicit c =>
-      Ok(views.html.index(
-        SQL("SELECT name, song, num FROM bad_songs ORDER BY num DESC")().map(row =>
-          row[String]("name") :: row[String]("song") :: row[Int]("num") :: Nil
-        ).toList
-      ))
+      val songs = SQL("SELECT name, song, num FROM bad_songs ORDER BY num DESC")().map(row =>
+        row[String]("name") :: row[String]("song") :: row[Int]("num") :: Nil
+      ).toList
+      val names = SQL("SELECT name, SUM(num) FROM bad_songs GROUP BY name ORDER BY SUM(num) DESC")().map(row =>
+        row[String]("name") :: row[Int]("SUM(num)") :: Nil
+      ).toList
+      Ok(views.html.index(songs, names))
     }
   }
 
