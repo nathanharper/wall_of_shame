@@ -10,7 +10,7 @@ object Application extends Controller {
 
   def index = Action {
     DB withConnection { implicit c =>
-      val songs = SQL("SELECT name, song, num FROM bad_songs ORDER BY num DESC")().map(row =>
+      val songs = SQL("SELECT name, song, num FROM bad_songs ORDER BY num DESC LIMIT 50")().map(row =>
         row[String]("name") :: row[String]("song") :: row[Int]("num") :: Nil
       ).toList
       val names = SQL("SELECT name, SUM(num) FROM bad_songs GROUP BY name ORDER BY SUM(num) DESC")().map(row =>
