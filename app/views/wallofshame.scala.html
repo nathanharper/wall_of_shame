@@ -1,0 +1,33 @@
+@(songs : List[List[Any]], names : List[List[Any]])
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wall of Shame</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/arcade.css")"/>
+</head>
+<body>
+<div id="smallStars" class="stars"></div>
+<div id="medStars" class="stars"></div>
+<div id="largeStars" class="stars"></div>
+    <!--<h1 id="blinker">I'm not annoying you, am I?</h1>-->
+    <h1 id="blinker">wall of shame</h1>
+    <section>
+        <h2>Shameful Requests</h2>
+
+        <ol>             
+            @songs.map { r =>
+            <li title="@r(1)"><span class="req">@r(0): &ldquo;@r(1)&rdquo;</span> <span class="score">@r(2)</span></li>
+            }
+        </ol>
+    </section>
+    <section>
+        <h2>Shameful DJs</h2>
+        <ol>
+            @names.map { r =>
+            <li>@r(0) <span class="score">@r(1)</span></li>
+            }
+        </ol>            
+    </section>
+</body>
+</html>

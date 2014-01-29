@@ -1,0 +1,183 @@
+ @import url('http://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
+    
+    /*
+    font-family: 'Press Start 2P', cursive;
+font-family: 'VT323', cursive;
+    */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color:#000;
+    color:#FFF;
+}
+h1{
+    text-align:center;
+    text-transform:uppercase;
+    color:yellow;
+}    
+section{
+    margin:auto;
+    display:block;
+    max-width:800px;
+    
+    position: relative;
+    z-index: 9;
+}
+section li{
+    margin-bottom:.25rem;
+}
+section li:first-child{
+    color:red;
+}
+h1{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name: rainbow;
+    animation: 1s infinite linear rainbow;
+    
+    position: relative;
+    z-index: 9;    
+}
+h2{
+    color:yellow;
+    margin:2rem 0 .25rem 0;
+}
+ol{
+    margin:0;
+}
+@keyframes rainbow {
+    0% { 
+        color:red; 
+    }            
+    14% { 
+        color:orange;
+    }
+    28% { 
+        color:yellow; 
+    }            
+    42% { 
+        color:green;
+    }
+    56% { 
+        color:blue; 
+    }            
+    70% { 
+        color:indigo;
+    }
+    84% { 
+        color:violet; 
+    }            
+}
+@-webkit-keyframes rainbow {
+    0% { 
+        color:red; 
+    }            
+    14% { 
+        color:orange;
+    }
+    28% { 
+        color:yellow; 
+    }            
+    42% { 
+        color:green;
+    }
+    56% { 
+        color:blue; 
+    }            
+    70% { 
+        color:indigo;
+    }
+    84% { 
+        color:violet; 
+    }            
+}
+.stars{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-name: smst;
+    animation: 1s infinite linear smst;
+
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;    
+    
+    opacity:.5;
+}
+
+@keyframes smst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -256px; 
+    }                    
+}
+@keyframes medst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -512px; 
+    }                    
+}
+@keyframes lgst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -1024px; 
+    }                    
+}
+@-webkit-keyframes smst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -256px; 
+    }                    
+}
+@-webkit-keyframes medst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -512px; 
+    }                    
+}
+@-webkit-keyframes lgst {
+    0% { 
+        background-position: 0 0; 
+        }            
+    100% { 
+        background-position: 0% -1024px; 
+    }                    
+}
+#smallStars{
+    background-image:url('../images/small.png');
+    -webkit-animation-name: smst;
+    animation-name: smst;
+}
+#medStars{
+    background-image:url('../images/med.png');
+    -webkit-animation-name: medst;
+    animation-name: medst;
+}
+#largeStars{
+    background-image:url('../images/large.png');
+    -webkit-animation-name: lgst;
+    animation-name: lgst;
+}
+
+.score{    
+    float:right;
+}
+.req{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    width:90%;
+    display:inline-block;
+}

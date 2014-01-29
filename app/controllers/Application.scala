@@ -16,7 +16,7 @@ object Application extends Controller {
       val names = SQL("SELECT name, SUM(num) FROM bad_songs GROUP BY name ORDER BY SUM(num) DESC")().map(row =>
         row[String]("name") :: row[Int]("SUM(num)") :: Nil
       ).toList
-      Ok(views.html.index(songs, names))
+      Ok(views.html.wallofshame(songs, names))
     }
   }
 
