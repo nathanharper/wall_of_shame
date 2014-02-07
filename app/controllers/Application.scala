@@ -8,6 +8,14 @@ import play.api.Play.current
 
 object Application extends Controller {
 
+  def gifs(name: String) = Action {
+    name match {
+      case "shaq" => Ok(views.html.shaq("http://i.imgur.com/MngJhBl.gif"))
+      case "cat" => Ok(views.html.shaq("http://i.imgur.com/aHVZR4R.gif"))
+      case _ => NotFound(views.html.notfound())
+    }
+  }
+
   def index = Action {
     DB withConnection { implicit c =>
       val songs = SQL("SELECT name, song, num FROM bad_songs ORDER BY num DESC LIMIT 25")().map(row =>
