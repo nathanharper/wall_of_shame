@@ -95,6 +95,7 @@ ol{
         color:violet; 
     }            
 }
+/*
 .stars{
     -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
@@ -174,7 +175,7 @@ ol{
     -webkit-animation-name: lgst;
     animation-name: lgst;
 }
-
+*/
 .score{    
     float:right;
 }
